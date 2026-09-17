@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>UAE AED to PKR Exchange Rates | Compare Exchange Houses</title>
+
+<meta name="description"
+content="Compare AED to PKR exchange rates from UAE exchange houses and money transfer services.">
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7fb;
+    color: #1f2937;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #063b2b, #087443);
+    color: white;
+    padding: 35px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* MAIN */
+
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 18px;
+}
+
+/* CALCULATOR */
+
+.calculator {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+    margin-bottom: 25px;
+}
+
+.calculator h2 {
+    margin-bottom: 20px;
+}
+
+.inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 7px;
+}
+
+input, select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.result {
+    margin-top: 20px;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.result strong {
+    font-size: 28px;
+    color: #047857;
+}
+
+/* TOP RATE */
+
+.best-rate {
+    background: linear-gradient(135deg, #064e3b, #059669);
+    color: white;
+    padding: 22px;
+    border-radius: 15px;
+    margin-bottom: 25px;
+}
+
+.best-rate h2 {
+    margin-bottom: 8px;
+}
+
+.best-number {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* TABLE */
+
+.table-container {
+    background: white;
+    border-radius: 15px;
+    overflow-x: auto;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+th {
+    background: #f3f4f6;
+    text-align: left;
+    padding: 16px;
+    font-size: 14px;
+}
+
+td {
+    padding: 16px;
+    border-top: 1px solid #e5e7eb;
+}
+
+tr:hover {
+    background: #f9fafb;
+}
+
+.provider {
+    font-weight: bold;
+}
+
+.rate {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.best {
+    color: #047857;
+}
+
+.badge {
+    background: #d1fae5;
+    color: #047857;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.update {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px 20px;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    .inputs {
+        grid-template-columns: 1fr;
+    }
+
+    .calculator {
+        padding: 18px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>🇦🇪 AED → 🇵🇰 PKR Exchange Rates</h1>
+
+    <p>
+        Compare UAE exchange houses and money transfer services
+    </p>
+
+    <p id="lastUpdated" style="margin-top:10px; font-size:12px; opacity:0.85;">
+        Loading latest rates…
+    </p>
+
+</header>
+
+
+<div class="container">
+
+
+    <!-- CALCULATOR -->
+
+    <div class="calculator">
+
+        <h2>💰 Currency Calculator</h2>
+
+        <div class="inputs">
+
+            <div>
+
+                <label>Amount</label>
+
+                <input
+                    type="number"
+                    id="amount"
+                    value="1000"
+                    min="0"
+                    oninput="calculate()"
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Exchange Provider</label>
+
+                <select id="provider" onchange="calculate()">
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="result">
+
+            <div id="conversionText">
+                AED 1,000 = PKR 75,500
+            </div>
+
+            <strong id="result">
+                PKR 75,500
+            </strong>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- BEST RATE -->
+
+    <div class="best-rate">
+
+        <h2>🏆 Best AED → PKR Rate</h2>
+
+        <div id="bestProvider">
+            Index Exchange
+        </div>
+
+        <div class="best-number" id="bestRate">
+            75.50 PKR
+        </div>
+
+        <div>
+            per AED
+        </div>
+
+    </div>
+
+
+
+    <!-- TABLE -->
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>#</th>
+
+                    <th>Exchange / Service</th>
+
+                    <th>AED → PKR</th>
+
+                    <th>PKR per AED</th>
+
+                    <th>Status</th>
+
+                    <th>Updated</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="rateTable">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+
+
+<footer>
+
+    <p>
+        Rates shown are indicative and may change without notice.
+    </p>
+
+    <p style="margin-top:8px;">
+        Always confirm the final rate and fees with the provider before sending money.
+    </p>
+
+    <p style="margin-top:15px;">
+        © 2026 UAE Exchange Rate Comparison
+    </p>
+
+</footer>
+
+
+
+<script>
+
+/*
+====================================================
+EXCHANGE RATE DATA
+====================================================
+
+This used to be a hardcoded list. Now the page fetches
+rates.json instead, which a daily script (scraper.py,
+run by GitHub Actions) regenerates every day.
+
+FALLBACK_PROVIDERS below is only used if rates.json
+fails to load for some reason (e.g. viewing the file
+directly from your computer instead of through a
+website), so the page never shows completely blank.
+*/
+
+const FALLBACK_PROVIDERS = [
+    { name: "Al Ansari Exchange", rate: null, status: "Live source needed" },
+    { name: "TapTap Send", rate: null, status: "Live source needed" },
+    { name: "du Pay", rate: null, status: "Live source needed" },
+    { name: "e& money", rate: null, status: "Live source needed" },
+    { name: "Botim", rate: null, status: "Live source needed" },
+    { name: "Index Exchange", rate: 75.50, status: "Published rate" },
+    { name: "Redha Al Ansari Exchange", rate: null, status: "Live source needed" },
+    { name: "LuLu Exchange", rate: null, status: "Live source needed" },
+    { name: "Fardan Exchange", rate: null, status: "Live source needed" },
+    { name: "Western Union", rate: null, status: "Live source needed" },
+    { name: "Al Rostamani International Exchange", rate: null, status: "Live source needed" }
+];
+
+let providers = FALLBACK_PROVIDERS;
+
+
+/*
+====================================================
+SORT AVAILABLE RATES
+====================================================
+*/
+
+function getAvailableProviders() {
+
+    return providers
+        .filter(p => p.rate !== null)
+        .sort((a,b) => b.rate - a.rate);
+
+}
+
+
+/*
+====================================================
+DISPLAY TABLE
+====================================================
+*/
+
+function displayTable() {
+
+    const table = document.getElementById("rateTable");
+
+    table.innerHTML = "";
+
+    const sorted = [...providers].sort((a,b) => {
+
+        if (a.rate === null) return 1;
+
+        if (b.rate === null) return -1;
+
+        return b.rate - a.rate;
+
+    });
+
+
+    let ranking = 1;
+
+    let bestRate = null;
+
+    let bestName = "";
+
+
+    sorted.forEach((provider) => {
+
+        if (provider.rate !== null && bestRate === null) {
+
+            bestRate = provider.rate;
+            bestName = provider.name;
+
+        }
+
+
+        const row = document.createElement("tr");
+
+
+        let rank = provider.rate !== null
+            ? ranking++
+            : "-";
+
+
+        let rateHTML = provider.rate !== null
+            ? `<span class="rate">${provider.rate.toFixed(2)}</span>`
+            : `<span class="update">Unavailable</span>`;
+
+
+        let statusHTML = provider.rate !== null
+            ? `<span class="badge">${provider.status || "Available"}</span>`
+            : `<span class="update">${provider.status || "Awaiting live data"}</span>`;
+
+
+        row.innerHTML = `
+
+            <td>${rank}</td>
+
+            <td class="provider">
+                ${provider.name}
+            </td>
+
+            <td>
+                ${rateHTML}
+            </td>
+
+            <td>
+                ${
+                    provider.rate !== null
+                    ? "1 AED = " + provider.rate.toFixed(2) + " PKR"
+                    : "-"
+                }
+            </td>
+
+            <td>
+                ${statusHTML}
+            </td>
+
+            <td class="update">
+                ${
+                    provider.rate !== null
+                    ? "Today"
+                    : "-"
+                }
+            </td>
+
+        `;
+
+
+        table.appendChild(row);
+
+    });
+
+
+    if (bestRate !== null) {
+
+        document.getElementById("bestProvider").textContent =
+            bestName;
+
+        document.getElementById("bestRate").textContent =
+            bestRate.toFixed(2) + " PKR";
+
+    }
+
+}
+
+
+/*
+====================================================
+CALCULATOR DROPDOWN
+====================================================
+*/
+
+function populateProviders() {
+
+    const select =
+        document.getElementById("provider");
+
+    select.innerHTML = "";
+
+
+    providers.forEach((provider, index) => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = index;
+
+        option.textContent =
+            provider.name +
+            (
+                provider.rate !== null
+                ? " — " + provider.rate.toFixed(2)
+                : " — unavailable"
+            );
+
+        select.appendChild(option);
+
+    });
+
+}
+
+
+/*
+====================================================
+CALCULATE AED → PKR
+====================================================
+*/
+
+function calculate() {
+
+    const amount =
+        parseFloat(
+            document.getElementById("amount").value
+        ) || 0;
+
+
+    const index =
+        document.getElementById("provider").value;
+
+
+    const provider =
+        providers[index];
+
+
+    if (!provider || provider.rate === null) {
+
+        document.getElementById("result")
+            .textContent = "Rate unavailable";
+
+        document.getElementById("conversionText")
+            .textContent =
+            "Live rate is not currently available for this provider.";
+
+        return;
+
+    }
+
+
+    const result =
+        amount * provider.rate;
+
+
+    document.getElementById("result")
+        .textContent =
+        "PKR " +
+        result.toLocaleString(
+            "en-PK",
+            {
+                maximumFractionDigits: 0
+            }
+        );
+
+
+    document.getElementById("conversionText")
+        .textContent =
+        "AED " +
+        amount.toLocaleString() +
+        " = PKR " +
+        result.toLocaleString(
+            "en-PK",
+            {
+                maximumFractionDigits: 0
+            }
+        );
+
+}
+
+
+/*
+====================================================
+LOAD LIVE DATA, THEN INITIALIZE
+====================================================
+*/
+
+function formatUpdatedTime(isoString) {
+
+    try {
+
+        const d = new Date(isoString);
+
+        return d.toLocaleString("en-GB", {
+            day: "numeric",
+            month: "short",
+            year: "numeric",
+            hour: "2-digit",
+            minute: "2-digit"
+        }) + " (UAE time shown as local browser time)";
+
+    } catch (e) {
+
+        return "recently";
+
+    }
+
+}
+
+function initPage() {
+
+    populateProviders();
+
+    displayTable();
+
+    calculate();
+
+}
+
+fetch("rates.json?t=" + Date.now())   // cache-bust so browsers don't show yesterday's file
+    .then(res => {
+
+        if (!res.ok) throw new Error("rates.json not found");
+
+        return res.json();
+
+    })
+    .then(data => {
+
+        providers = data.providers.map(p => ({
+            name: p.name,
+            rate: p.rate,
+            status: p.status
+        }));
+
+        document.getElementById("lastUpdated").textContent =
+            "Rates last updated: " + formatUpdatedTime(data.updated_at_utc) +
+            (data.benchmark_rate
+                ? " · Market benchmark: " + data.benchmark_rate.toFixed(2) + " PKR/AED"
+                : "");
+
+        initPage();
+
+    })
+    .catch(err => {
+
+        console.warn("Could not load rates.json, showing fallback data:", err);
+
+        document.getElementById("lastUpdated").textContent =
+            "Showing offline sample data (rates.json unavailable)";
+
+        initPage();
+
+    });
+
+</script>
+
+</body>
+</html>
