@@ -53,17 +53,18 @@ TIMEOUT = 15
 
 def fetch_benchmark_rate():
     """
-    Free, keyless, no-signup FX API. Gives the interbank/market AED->PKR
-    rate (not a retail rate any single exchange house would actually pay
-    you, but a solid reference point ("today's market rate is X")).
+    Free, keyless FX API covering 160+ currencies (including AED and PKR),
+    updated once daily. Attribution: data from exchangerate-api.com.
     """
     try:
         r = requests.get(
-            "https://api.frankfurter.dev/v1/latest?base=AED&symbols=PKR",
+            "https://open.er-api.com/v6/latest/AED",
             timeout=TIMEOUT,
         )
         r.raise_for_status()
         data = r.json()
+        if data.get("result") != "success":
+            raise ValueError(f"API returned: {data.get('result')}")
         return round(data["rates"]["PKR"], 4)
     except Exception as e:
         print(f"[benchmark] failed: {e}", file=sys.stderr)
