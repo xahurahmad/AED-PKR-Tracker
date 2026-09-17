@@ -1,18 +1,62 @@
 {
-  "updated_at_utc": "2026-09-16T00:00:00Z",
+  "updated_at_utc": "2026-09-17T11:01:12.803851Z",
   "benchmark_rate": null,
   "benchmark_source": "Frankfurter (ECB/open market data)",
   "providers": [
-    { "name": "Al Ansari Exchange", "rate": null, "status": "Live source needed" },
-    { "name": "TapTap Send", "rate": null, "status": "Live source needed" },
-    { "name": "du Pay", "rate": null, "status": "Live source needed" },
-    { "name": "e& money", "rate": null, "status": "Live source needed" },
-    { "name": "Botim", "rate": null, "status": "Live source needed" },
-    { "name": "Index Exchange", "rate": 75.50, "status": "Manually updated" },
-    { "name": "Redha Al Ansari Exchange", "rate": null, "status": "Live source needed" },
-    { "name": "LuLu Exchange", "rate": null, "status": "Live source needed" },
-    { "name": "Fardan Exchange", "rate": null, "status": "Live source needed" },
-    { "name": "Western Union", "rate": null, "status": "Live source needed" },
-    { "name": "Al Rostamani International Exchange", "rate": null, "status": "Live source needed" }
+    {
+      "name": "Al Ansari Exchange",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "TapTap Send",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "du Pay",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "e& money",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "Botim",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "Index Exchange",
+      "rate": 75.5,
+      "status": "Manually updated"
+    },
+    {
+      "name": "Redha Al Ansari Exchange",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "LuLu Exchange",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "Fardan Exchange",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "Western Union",
+      "rate": null,
+      "status": "Live source needed"
+    },
+    {
+      "name": "Al Rostamani International Exchange",
+      "rate": null,
+      "status": "Live source needed"
+    }
   ]
 }
