@@ -88,10 +88,15 @@ def fetch_masarif_rate(slug):
     url = f"https://masarif.ae/currency-exchanges/{slug}/currency-exchange-rates/pkr"
     try:
         r = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+        print(f"[masarif:{slug}] HTTP {r.status_code}, {len(r.text)} bytes", file=sys.stderr)
         r.raise_for_status()
 
         match = re.search(r"1\s*AED\s*=\s*([\d]+\.?[\d]*)\s*PKR", r.text)
         if not match:
+            # Print a snippet so we can see if we got a bot-check page,
+            # a redirect, or genuinely different HTML than expected.
+            snippet = r.text[:500].replace("\n", " ")
+            print(f"[masarif:{slug}] no rate pattern found. First 500 chars: {snippet}", file=sys.stderr)
             return None
 
         rate = float(match.group(1))
