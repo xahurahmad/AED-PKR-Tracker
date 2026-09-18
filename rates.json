@@ -1,12 +1,12 @@
 {
-  "updated_at_utc": "2026-09-17T11:12:11.466344Z",
-  "benchmark_rate": null,
-  "benchmark_source": "Frankfurter (ECB/open market data)",
+  "updated_at_utc": "2026-09-18T10:56:14.313107Z",
+  "benchmark_rate": 75.5054,
+  "benchmark_source": "open.er-api.com (exchangerate-api.com)",
   "providers": [
     {
       "name": "Al Ansari Exchange",
-      "rate": null,
-      "status": "Live source needed"
+      "rate": 75.19,
+      "status": "Community-sourced (Masarif.ae)"
     },
     {
       "name": "TapTap Send",
@@ -31,7 +31,7 @@
     {
       "name": "Index Exchange",
       "rate": 75.5,
-      "status": "Manually updated"
+      "status": "Community-sourced (Masarif.ae)"
     },
     {
       "name": "Redha Al Ansari Exchange",
@@ -40,8 +40,8 @@
     },
     {
       "name": "LuLu Exchange",
-      "rate": null,
-      "status": "Live source needed"
+      "rate": 75.62,
+      "status": "Community-sourced (Masarif.ae)"
     },
     {
       "name": "Fardan Exchange",
