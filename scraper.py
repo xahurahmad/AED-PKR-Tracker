@@ -93,8 +93,6 @@ def fetch_masarif_rate(slug):
 
         match = re.search(r"1\s*AED\s*=\s*([\d]+\.?[\d]*)\s*PKR", r.text)
         if not match:
-            # Print a snippet so we can see if we got a bot-check page,
-            # a redirect, or genuinely different HTML than expected.
             snippet = r.text[:500].replace("\n", " ")
             print(f"[masarif:{slug}] no rate pattern found. First 500 chars: {snippet}", file=sys.stderr)
             return None
@@ -128,8 +126,6 @@ def fetch_al_rostamani_exchange():
     return fetch_masarif_rate("al-rostamani-international-exchange")
 
 
-# Providers with no working live source yet get fetch_fn=None, so the
-# site still lists them (as "Live source needed"), same as before.
 PROVIDERS = [
     {"name": "Al Ansari Exchange", "fetch_fn": fetch_al_ansari_exchange},
     {"name": "TapTap Send", "fetch_fn": None},
@@ -137,16 +133,13 @@ PROVIDERS = [
     {"name": "e& money", "fetch_fn": None},
     {"name": "Botim", "fetch_fn": None},
     {"name": "Index Exchange", "fetch_fn": fetch_index_exchange},
-    {"name": "Redha Al Ansari Exchange", "fetch_fn": None},  # no PKR data on Masarif
+    {"name": "Redha Al Ansari Exchange", "fetch_fn": None},
     {"name": "LuLu Exchange", "fetch_fn": fetch_lulu_exchange},
-    {"name": "Fardan Exchange", "fetch_fn": None},  # Masarif shows fake placeholder data
+    {"name": "Fardan Exchange", "fetch_fn": None},
     {"name": "Western Union", "fetch_fn": None},
     {"name": "Al Rostamani International Exchange", "fetch_fn": fetch_al_rostamani_exchange},
 ]
 
-# Manually-maintained fallback rates, used only if a provider's live fetch
-# fails on a given day (keeps the site from suddenly going blank for it).
-# Edit this number yourself whenever you check their site directly.
 MANUAL_RATES = {
     "Index Exchange": 75.50,
 }
@@ -163,7 +156,7 @@ def build_rates():
             rate = p["fetch_fn"]()
             if rate is not None:
                 status = "Community-sourced (Masarif.ae)"
-            time.sleep(1)  # be polite between requests
+            time.sleep(1)
 
         if rate is None and name in MANUAL_RATES:
             rate = MANUAL_RATES[name]
