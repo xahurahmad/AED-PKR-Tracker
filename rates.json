@@ -15,17 +15,17 @@
     },
     {
       "name": "du Pay",
-      "rate": null,
+      "rate": 76.005,
       "status": "Live source needed"
     },
     {
       "name": "e& money",
-      "rate": null,
+      "rate": 75.61,
       "status": "Live source needed"
     },
     {
       "name": "Botim",
-      "rate": null,
+      "rate": 75.51,
       "status": "Live source needed"
     },
     {
@@ -35,7 +35,7 @@
     },
     {
       "name": "Redha Al Ansari Exchange",
-      "rate": null,
+      "rate": 75.46,
       "status": "Live source needed"
     },
     {
@@ -45,17 +45,17 @@
     },
     {
       "name": "Fardan Exchange",
-      "rate": null,
+      "rate": 75.46,
       "status": "Live source needed"
     },
     {
       "name": "Western Union",
-      "rate": null,
+      "rate": 75.044,
       "status": "Live source needed"
     },
     {
       "name": "Al Rostamani International Exchange",
-      "rate": null,
+      "rate": 75.40,
       "status": "Live source needed"
     }
   ]
