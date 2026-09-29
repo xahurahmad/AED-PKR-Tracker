@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-09-28T13:27:26.711354Z",
-  "benchmark_rate": 75.3972,
+  "updated_at_utc": "2026-09-29T12:30:41.964383Z",
+  "benchmark_rate": 75.491,
   "benchmark_source": "open.er-api.com (exchangerate-api.com)",
   "providers": [
     {
@@ -10,22 +10,22 @@
     },
     {
       "name": "TapTap Send",
-      "rate": 75.40,
-      "status": "Community-sourced (Masarif.ae)"
+      "rate": null,
+      "status": "Live source needed"
     },
     {
       "name": "du Pay",
-      "rate": 76.005,
+      "rate": null,
       "status": "Live source needed"
     },
     {
       "name": "e& money",
-      "rate": 75.61,
-      "status": "Community-sourced (Masarif.ae)"
+      "rate": null,
+      "status": "Live source needed"
     },
     {
       "name": "Botim",
-      "rate": 75.51,
+      "rate": null,
       "status": "Live source needed"
     },
     {
@@ -35,8 +35,8 @@
     },
     {
       "name": "Redha Al Ansari Exchange",
-      "rate": 75.46,
-      "status": "Community-sourced (Masarif.ae)"
+      "rate": null,
+      "status": "Live source needed"
     },
     {
       "name": "LuLu Exchange",
@@ -45,18 +45,18 @@
     },
     {
       "name": "Fardan Exchange",
-      "rate": 75.46,
-      "status": "Community-sourced (Masarif.ae)"
+      "rate": null,
+      "status": "Live source needed"
     },
     {
       "name": "Western Union",
-      "rate": 75.044,
+      "rate": null,
       "status": "Live source needed"
     },
     {
       "name": "Al Rostamani International Exchange",
-      "rate": 75.40,
-      "status": "Community-sourced (Masarif.ae)"
+      "rate": null,
+      "status": "Live source needed"
     }
   ]
 }
