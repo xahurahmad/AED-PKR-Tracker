@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-12T14:59:53.434359Z",
-  "benchmark_rate": 75.4089,
+  "updated_at_utc": "2026-10-13T13:55:28.384253Z",
+  "benchmark_rate": 75.3886,
   "benchmark_source": "open.er-api.com (exchangerate-api.com)",
   "providers": [
     {
@@ -30,7 +30,7 @@
     },
     {
       "name": "Index Exchange",
-      "rate": 75.56,
+      "rate": 75.55,
       "status": "Community-sourced (Masarif.ae)"
     },
     {
