@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-23T11:20:00.111570Z",
-  "benchmark_rate": 75.439,
+  "updated_at_utc": "2026-10-24T10:39:40.439416Z",
+  "benchmark_rate": 75.3509,
   "benchmark_source": "open.er-api.com (exchangerate-api.com)",
   "providers": [
     {
@@ -30,8 +30,8 @@
     },
     {
       "name": "Index Exchange",
-      "rate": 75.5,
-      "status": "Manually updated"
+      "rate": 75.55,
+      "status": "Community-sourced (Masarif.ae)"
     },
     {
       "name": "Redha Al Ansari Exchange",
@@ -40,8 +40,8 @@
     },
     {
       "name": "LuLu Exchange",
-      "rate": null,
-      "status": "Live source needed"
+      "rate": 75.65,
+      "status": "Community-sourced (Masarif.ae)"
     },
     {
       "name": "Fardan Exchange",
