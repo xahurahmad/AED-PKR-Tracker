@@ -1,6 +1,6 @@
 {
-  "updated_at_utc": "2026-10-28T12:29:10.734488Z",
-  "benchmark_rate": 75.4142,
+  "updated_at_utc": "2026-10-29T12:40:05.182101Z",
+  "benchmark_rate": 75.3325,
   "benchmark_source": "open.er-api.com (exchangerate-api.com)",
   "providers": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "name": "LuLu Exchange",
-      "rate": 75.65,
+      "rate": 76.0,
       "status": "Community-sourced (Masarif.ae)"
     },
     {
